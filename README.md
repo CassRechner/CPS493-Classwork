@@ -1,4 +1,4 @@
-# CPS493-classwork
+# CPS493-Classwork
 
 ![Image of Cassie](/assets/photos/cassandra.jpg)
 
