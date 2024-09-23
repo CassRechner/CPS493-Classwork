@@ -9,162 +9,217 @@
     <style>
         .bg-white { /*Not actually white*/
             background-color: whitesmoke;
+            color: black;
         }
-        .price
+        .shelf {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 1rem;
+        }
+        .shelf li {
+          background-color: white;
+          padding: 1rem;
+          border-radius: 0.5rem;
+          box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+          width: 150px;
+          cursor: pointer;
+        } 
+        .shelf h3 {
+          margin: 0;
+          font-size: 1.25rem;
+          font-weight: bold;
+        }
+        .shelf .price {
+          text-align: right;
+          font-size: 1rem;
+          color: #666;
+        }
     </style>
     
 </head>
-<body>
-    <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-            <a class="navbar-item" href="https://bulma.io">
-                Bulma: a<br> modern CSS <!--Unsure how to get the text to be aligned weirdly like in the example-->
-            </a>
-            <div class="navbar-menu">
-                <div class="navbar-start">
-                    <a class="navbar-item" href="https://bulma.io">
-                        Home
-                    </a>
-                    <div class="navbar-item has-dropdown is-hoverable">
-                        <a class="navbar-link" href="https://bulma.io/documentation/overview/start/"> <!--Many of these links are dead but that's what the example has-->
-                            Docs
+    <body>
+        <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="https://bulma.io">
+                    Bulma: a<br> modern CSS <!--Unsure how to get the text to be aligned weirdly like in the example-->
+                </a>
+                <div class="navbar-menu">
+                    <div class="navbar-start">
+                        <a class="navbar-item" href="https://bulma.io">
+                            Home
                         </a>
-                        <div class="navbar-dropdown">
-                            <a class="navbar-item" href="https://bulma.io/documentation/overview/start/">
-                                Overview
+                        <div class="navbar-item has-dropdown is-hoverable">
+                            <a class="navbar-link" href="https://bulma.io/documentation/overview/start/"> <!--Many of these links are dead but that's what the example has-->
+                                Docs
                             </a>
-                            <a class="navbar-item" href="https://bulma.io/documentation/overview/modifiers/">
-                                Modifiers
-                            </a>
-                            <a class="navbar-item" href="https://bulma.io/documentation/columns/basics/">
-                                Columns
-                            </a>
-                            <a class="navbar-item" href="https://bulma.io/documentation/layout/container/">
-                                Layout
-                            </a>
-                            <a class="navbar-item" href="https://bulma.io/documentation/form/general/">
-                                Form
-                            </a>
-                            <hr class="navbar-divider">
-                            <a class="navbar-item" href="https://bulma.io/documentation/elements/box/">
-                                Elements
-                            </a>
-                            <a class="navbar-item" href="https://bulma.io/documentation/components/breadcrumb/">
-                                Components
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="navbar-end"> <!--No idea why it's not right aligned-->
-                    <div class="navbar-item">
-                        <a class="bd-tw-button button" data-social-network="Twitter" data-social-action="tweet" data-social-target="https://bulma.io" target="_blank" href="https://x.com/intent/tweet?text=Bulma: a modern CSS framework based on Flexbox&amp;hashtags=bulmaio&amp;url=https://bulma.io&amp;via=jgthms">
-                            <span class="icon">
-                                <i class="fab fa-twitter"></i>
-                            </span>
-                            <span>
-                            Tweet
-                            </span>
-                        </a>
-                    </div>
-                    <div class="navbar-item">
-                        <a class="button is-primary" href="https://github.com/jgthms/bulma/releases/download/0.9.3/bulma-0.9.3.zip">
-                            <span class="icon">
-                                <i class="fas fa-download"></i>
-                            </span>
-                            <span>
-                                Download
-                            </span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <div class="section">
-        <div class="container">
-            <div class="columns">
-                <div class="columns is-one-quarter">
-                    <div class="card">
-                        <header class="card-header">
-                            <p class="class card-header-title">
-                                Component
-                            </p>
-                            <button class="class card-header-icon">
-                                <span class="icon">
-                                    <i class="fas fa-angle-down" aria-hidden="true"></i>
-                                </span>
-                            </button>
-                        </header>
-                        <div class="card-content">
-                            <div class="content">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec
-                                iaculis mauris. <a>@bulmaio</a>. <a href="#">#css</a>
-                                <a href="#">#responsive</a>
-                                <br />
-                                <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                            <div class="navbar-dropdown">
+                                <a class="navbar-item" href="https://bulma.io/documentation/overview/start/">
+                                    Overview
+                                </a>
+                                <a class="navbar-item" href="https://bulma.io/documentation/overview/modifiers/">
+                                    Modifiers
+                                </a>
+                                <a class="navbar-item" href="https://bulma.io/documentation/columns/basics/">
+                                    Columns
+                                </a>
+                                <a class="navbar-item" href="https://bulma.io/documentation/layout/container/">
+                                    Layout
+                                </a>
+                                <a class="navbar-item" href="https://bulma.io/documentation/form/general/">
+                                    Form
+                                </a>
+                                <hr class="navbar-divider">
+                                <a class="navbar-item" href="https://bulma.io/documentation/elements/box/">
+                                    Elements
+                                </a>
+                                <a class="navbar-item" href="https://bulma.io/documentation/components/breadcrumb/">
+                                    Components
+                                </a>
                             </div>
                         </div>
+                    </div>
 
-                        <footer class="card-footer">
-                            <a href="#" class="card-footer-item">Save</a>
-                            <a href="#" class="card-footer-item">Edit</a>
-                            <a href="#" class="card-footer-item">Delete</a>
-                          </footer>
+                    <div class="navbar-end"> <!--No idea why it's not right aligned-->
+                        <div class="navbar-item">
+                            <a class="bd-tw-button button" data-social-network="Twitter" data-social-action="tweet" data-social-target="https://bulma.io" target="_blank" href="https://x.com/intent/tweet?text=Bulma: a modern CSS framework based on Flexbox&amp;hashtags=bulmaio&amp;url=https://bulma.io&amp;via=jgthms">
+                                <span class="icon">
+                                    <i class="fab fa-twitter"></i>
+                                </span>
+                                <span>
+                                Tweet
+                                </span>
+                            </a>
+                        </div>
+                        <div class="navbar-item">
+                            <a class="button is-primary" href="https://github.com/jgthms/bulma/releases/download/0.9.3/bulma-0.9.3.zip">
+                                <span class="icon">
+                                    <i class="fas fa-download"></i>
+                                </span>
+                                <span>
+                                    Download
+                                </span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="message is-success">
-                <div class="message-body">This is a success alert</div>
-            </div>
-        
-            <div class="section bg-white">
+        </nav>
+
+        <div class="section">
+            <div class="container">
                 <div class="columns">
-                    <div class="column is-three-quarters">
-                        {{ message }}
-                        <ul class="shelf">
-                            <li v-for="product in products"></li>
-                            <h3>{{ product.name }}</h3>
-                            <p class="price">${{ product.price }}</p>
-                        </ul>
+                    <div class="columns is-one-quarter">
+                        <div class="card">
+                            <header class="card-header">
+                                <p class="class card-header-title">
+                                    Component
+                                </p>
+                                <button class="class card-header-icon">
+                                    <span class="icon">
+                                        <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                    </span>
+                                </button>
+                            </header>
+                            <div class="card-content">
+                                <div class="content">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec
+                                    iaculis mauris. <a>@bulmaio</a>. <a href="#">#css</a>
+                                    <a href="#">#responsive</a>
+                                    <br />
+                                    <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                                </div>
+                            </div>
+
+                            <footer class="card-footer">
+                                <a href="#" class="card-footer-item">Save</a>
+                                <a href="#" class="card-footer-item">Edit</a>
+                                <a href="#" class="card-footer-item">Delete</a>
+                            </footer>
+                        </div>
+                    </div>
+                </div>
+                <div class="message is-success">
+                    <div class="message-body">This is a success alert</div>
+                </div>
+            
+                <div class="section bg-white" id="app">
+                    <div class="columns">
+                        <div class="column is-three-quarters">
+                            {{ message }}
+                            <ul class="shelf">
+                                <li v-for="product in products" @click="addToCart(product)">
+                                    <h3>{{ product.name }}</h3>
+                                    <p class="price">${{ product.price }}</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="column">
+                            <table class="table">
+                              <thead>
+                                <tr>
+                                  <th>Product</th>
+                                  <th>Price</th>
+                                  <th>Quantity</th>
+                                  <th>Total</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr v-for="item in cart">
+                                  <td>{{ item.product.name }}</td>
+                                  <td>${{ item.product.price }}</td>
+                                  <td>{{ item.quantity }}</td>
+                                  <td>${{ item.product.price * item.quantity }}</td>
+                                </tr>
+                              </tbody>
+                              <tfoot>
+                                <tr>
+                                  <td colspan="3">Total</td>
+                                  <td>${{ cart.reduce((total, item) => total + item.product.price * item.quantity, 0) }}</td>
+                                </tr>
+                              </tfoot>
+                            </table>
+                          </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script>
-        const { createApp, ref } = Vue
+        
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <script>
+            const { createApp, ref } = Vue
 
-        createApp({
-            setup() {
-                const message = ref('Hello vue!')
-                const products = ref([
-                    { name: 'Pizza', price: 5.50 },
-                    { name: 'Pozza', price: 6.99 },
-                    { name: 'Pezza', price: 2.15 },
-                ])
+            createApp({
+                setup() {
+                    const message = ref('Hello vue!')
 
-                const cart = ref([])
+                    const products = ref([
+                        { name: 'Pizza', price: 5.50 },
+                        { name: 'Pooza', price: 6.99 },
+                        { name: 'Pezza', price: 2.15 },
+                        { name: "Doctor Schlepper", price: 4252.39 },
+                        { name: "Boneless Pizza", price: 30.20 },
+                        { name: "Gralic Knots", price: 8.75 },
+                        { name: "The Joker", price: 34.21}
+                    ])
 
-                function addToCart(product) {
-                    const item = cart.value.find(item => item.product.name === product.name)
-                    if(item) {
-                        cart++
-                    } else {
-                        cart.vue.push({ product })
+                    const cart = ref([])
+
+                    function addToCart(product) {
+                        const item = cart.value.find(item => item.product.name === product.name)
+                        if(item) {
+                            item.quantity++
+                        } else {
+                            cart.value.push({ product, quantity: 1 })
+                        }
+                    }
+
+                    return {
+                        message, products, cart, addToCart
                     }
                 }
+            }).mount('#app')
+        </script>
 
-                return {
-                    message, products, cart, addToCart
-                }
-            }
-        }).mount('#app')
-    </script>
-
-</body>
+    </body>
 </html>
