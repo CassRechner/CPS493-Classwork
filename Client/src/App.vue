@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
+import NavBar from './components/NavBar.vue'
 </script>
 
 <template>
@@ -14,10 +15,12 @@ import HelloWorld from './components/HelloWorld.vue'
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
       </nav>
+      <NavBar /> <!--Add this from lecture-->
     </div>
   </header>
-
-  <RouterView />
+  <div class="container">
+    <RouterView />
+  </div>
 </template>
 
 <style scoped>
@@ -29,6 +32,11 @@ header {
 .logo {
   display: block;
   margin: 0 auto 2rem;
+}
+
+.container {
+  background-color: aliceblue;
+  box-shadow: drop-shadow(0 0 10px rgba 0, 0, 0, 1);
 }
 
 nav {
