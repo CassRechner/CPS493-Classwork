@@ -1,6 +1,7 @@
 <script setup lang="ts">
     import { RouterLink } from "vue-router"
-
+    import { ref } from "vue";
+    
     const isOpen = ref(false)
 </script>
 
@@ -19,7 +20,7 @@
                 </a>
             </div>
 
-            <div class="navbar-menu" :class=" { 'is-active'=isOpen } ">
+            <div class="navbar-menu" :class=" { 'is-active':isOpen } ">
 
             </div>
         </div>
