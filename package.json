@@ -1,0 +1,17 @@
+{
+    "name": "cps493-classwork",
+    "version": "1.0.0",
+    "description": "",
+
+    "scripts": {
+        "start": "node server/index.js",
+        "dev": "nodemon server/index.js --watch server"
+    },
+    "dependencies": {
+        "express": "^4.21.0",
+        "dayjs": "^1.11.13"
+    },
+    "devDependencies": {
+        "nodemon": "^3.1.7"
+    }
+}

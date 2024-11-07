@@ -1,0 +1,28 @@
+###
+https://google.com
+
+###
+POST https://dummyjson.com/products/add
+MyHeader: MyValue
+
+{
+    "title": "Green Lip Stick",
+    "price": 12.99
+    "description": "for all the toxic sludge girlies"
+}
+
+###
+GET http://localhost:3000/about
+
+###
+GET http://localhost:3000/users
+###
+GET http://localhost:3000/users/30
+###
+DELETE http://localhost:3000/users/30
+###
+POST http://localhost:3000/users
+Content-Type: application.application/json
+{
+    "first"
+}

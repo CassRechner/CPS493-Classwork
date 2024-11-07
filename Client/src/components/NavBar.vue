@@ -2,7 +2,8 @@
     import { RouterLink } from "vue-router"
     import { ref } from "vue";
     
-    const isOpen = ref(false)
+    const isOpen = ref(false);
+    const isCartOpen = ref(false);
 </script>
 
 <template>
@@ -21,10 +22,13 @@
             </div>
 
             <div class="navbar-menu" :class=" { 'is-active':isOpen } ">
-
+                <!--Copy from repo-->
             </div>
         </div>
     </nav>
+    <FlyoutPanel ::is-open="">
+        <h1 class="title">Shopping Cart</h1>
+    </FlyoutPanel>
 </template>
 
 <style scoped>
